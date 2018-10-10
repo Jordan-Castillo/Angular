@@ -4,3 +4,9 @@ This repo will include all practice projects written in angular,
 
 React vs. Angular
     Ang - Core library includes Routing functionality, this must be imported inside React    Ang - Core library includes Routing functionality, this must be imported inside React
+
+
+
+For the time being, run these commands before pushing to ensure that correct Git account is uploading:
+git config user.name Jordan-Castillo
+git config user.email jtcastil@calpoly.edu
