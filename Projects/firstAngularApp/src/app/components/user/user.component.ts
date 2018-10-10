@@ -13,6 +13,7 @@ export class UserComponent {
   age: number;
   address;
 /**example datatypes
+*
 */
   constructor(){
     this.firstName = 'Jordan';
