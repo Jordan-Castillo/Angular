@@ -49,23 +49,47 @@ Installed Bootstrap:
   </li>
 
 Angular Specifics:
+    Property Binding:
         <img *ngIf="user.image" class="img-fluid" [src]="user.image" alt="random image">
         ^-- the [src]="user.image" is using something called Property Binding.
         What it does, is binds the normal property of the tag inside the brackets, in this case that is "src"
             And binds that property to the variable that you provide as a string
             EX: https://angular.io/guide/cheatsheet under Template Syntax
+        ♥ Can be used for any type, as opposed to string-interpolation which only works for strings
+        ±
+        ♥
+    String Interpolation:
+        When you declare a datatype inside your class, it can be referenced inside your .html file of the same name.
+            i.e. users.component.html has access to datatypes declared inside users.component.html
+        Ex:
+                 users: User[];        <--- all inside the .ts file
+                 this.users = [          
+                    {
+                    firstName: 'Jordan', <--- all inside the .ts file
+                    lastName: 'Castillo',
+                    age: 1,
+                    address: {
+                        street: 'abc st',   <--- all inside the .ts file
+                        city: 'sm',
+                        state: 'CA'
+                    },
+                    image: "https://loremflickr.com/320/240" 
+                    }
+                ...]
+                <li class="list-group-item">Age: {{user.age}}</li> <----- users.age used inside .html file 
+        String Interpolation uses 2 pairs of Curly Braces to access the string value that was declared inside the
+            .ts file and present it in the .html file
 
 
 
 
-
+Worthy References: 
+    Angular:
+        https://angular.io/guide/template-syntax
+        https://angular.io/guide/cheatsheet
 
 
 
 For the time being, run these commands before pushing to ensure that correct Git account is uploading:
-
-
 git config --global user.name Jordan-Castillo
-
-
-git config --global user.email jtcastil@calpoly.edu
+git config --global user.email 
