@@ -10,6 +10,8 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
+  currentClasses= {};
+  currentStyles= {};
   constructor() { }
   ngOnInit() {
     console.log('init...');
@@ -24,7 +26,8 @@ export class UsersComponent implements OnInit {
             city: 'sm',
             state: 'CA'
           },
-          image: "https://loremflickr.com/320/240"
+          image: 'https://loremflickr.com/320/240',
+          isActive: true
         },
         {
           firstName: 'Kiki',
@@ -35,7 +38,8 @@ export class UsersComponent implements OnInit {
             city: 'sm',
             state: 'CA'
           },
-          image: "https://loremflickr.com/320/246"
+          image: "https://loremflickr.com/320/246",
+          isActive: false
         },
         {
           firstName: 'Bloom',
@@ -46,21 +50,36 @@ export class UsersComponent implements OnInit {
             city: ' sm',
             state: 'CA'
           },
-          image: "https://loremflickr.com/320/249"
+          image: "https://loremflickr.com/320/249",
+          isActive: true
         }
       ];
 
     this.addUser(
       {
         firstName: 'Duke',
-        lastName: 'Willhelm'
+        lastName: 'Willhelm',
+        image: "https://loremflickr.com/320/190"
     }
     );
     this.loaded = true;
+    this.setCurrentClasses();
+    this.setCurrentStyles();
   }
 
-  addUser(user: User){
+  addUser(user: User) {
     this.users.push(user);
+  }
+  setCurrentClasses() {
+    this.currentClasses= {
+      'btn-success': this.enableAdd,
+      'big-text': this.showExtended
+    };
+  }
+  setCurrentStyles() {
+    this.currentStyles = {
+      'padding-top': this.showExtended ? '0' : '40px'
+    };
   }
 
 }
