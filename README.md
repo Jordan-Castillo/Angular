@@ -61,7 +61,7 @@ Angular Specifics:
     String Interpolation:
         When you declare a datatype inside your class, it can be referenced inside your .html file of the same name.
             i.e. users.component.html has access to datatypes declared inside users.component.html
-        Ex:
+            Ex:
                  users: User[];        <--- all inside the .ts file
                  this.users = [          
                     {
@@ -79,10 +79,17 @@ Angular Specifics:
                 <li class="list-group-item">Age: {{user.age}}</li> <----- users.age used inside .html file 
         String Interpolation uses 2 pairs of Curly Braces to access the string value that was declared inside the
             .ts file and present it in the .html file
-
-
-
-
+        Combining with BAR for added styling
+            Ex:
+                <li class="list-group-item">Age: {{user.age | uppercase}}</li>
+                                                            ^-- bar implies we are gonna make some adjustments to the string value
+                                                                ^-- uppercase obviously changes the value to uppercase
+                <li class="list-group-item">Balance: {{user.balance | currency}}</li>
+                                                                      ^formats the string as currency, adding 2 decimal places + USD money sign
+                <li class="list-group-item">Balance: {{user.balance | currency:"GBP" }}</li>
+                                                                                ^--- now instead of USD money sign, it is british pound symbol
+                <li class="list-group-item">Date Registered: {{user.registered | date:"mm/dd/yyyy"}}</li>   --> Date Registered: 30/02/2018
+                <li class="list-group-item">Date Registered: {{user.registered | date }}</li>               --> Date Registered: Jan 2, 2018
 Worthy References: 
     Angular:
         https://angular.io/guide/template-syntax

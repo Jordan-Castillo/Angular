@@ -27,7 +27,9 @@ export class UsersComponent implements OnInit {
             state: 'CA'
           },
           image: 'https://loremflickr.com/320/240',
-          isActive: true
+          isActive: true,
+          balance: 100,
+          registered: new Date('01/02/2018 08:30:00')
         },
         {
           firstName: 'Kiki',
@@ -39,7 +41,9 @@ export class UsersComponent implements OnInit {
             state: 'CA'
           },
           image: "https://loremflickr.com/320/246",
-          isActive: false
+          isActive: false,
+          balance: 160,
+          registered: new Date('03/12/2012 06:30:50')
         },
         {
           firstName: 'Bloom',
@@ -51,7 +55,9 @@ export class UsersComponent implements OnInit {
             state: 'CA'
           },
           image: "https://loremflickr.com/320/249",
-          isActive: true
+          isActive: true,
+          balance: 15,
+          registered: new Date('11/11/2011 08:30:00')
         }
       ];
 
